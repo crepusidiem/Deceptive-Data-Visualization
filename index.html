@@ -16,12 +16,44 @@
         --color-neutral-10: hsl(220 10% 10%);
       }
 
+      .backwards {
+            display: inline-block;
+            font-weight: bold;
+            color: var(--color-neutral-10);
+            transform: rotate(180deg);
+        }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1em 0;
+      }
+
+      th, td {
+        border: 1px solid #ccc;
+        padding: 0.5em;
+        text-align: center;
+      }
+
+      th {
+        background-color: #e9ecef;
+      }
+
+      .note {
+        font-style: italic;
+        color: #555;
+      }
+
       html {
         font: 100%/1.5 system-ui;
         counter-reset: figure;
         background: var(--color-neutral-95);
         max-width: min(75vw, 80em);
         margin: 0 auto;
+
+        b.colored {
+          color: rgb(85, 47, 96);
+        }
       }
 
       /* Headings */
@@ -110,7 +142,18 @@
         border: 1px solid var(--color-neutral-80);
         box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
         text-align: center;
-        background: white;
+        background: rgb(236, 236, 236);
+        /* Shrink the width of the figure while keep is at the center of the webpage */
+        /* max-width: 80%;
+        margin-inline: auto; */
+
+        img {
+          max-width: 100%;
+          max-height: 50vh;
+          object-fit: contain;
+          border-radius: 0.5rem;
+          box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        }
 
         > figcaption {
           font: 500 75% var(--font-sans);
@@ -152,22 +195,22 @@
     </header>
 
     <main>
-      <h2>Proposition: [STATE PROPOSITION]</h2>
+      <h2>Proposition: China Overtakes USA in High-Tech Exports</h2>
 
       <section>
         <h3>FOR the Proposition</h3>
 
         <figure>
-          <img src="IMAGE_FILENAME" alt="" />
-          <figcaption>BRIEF CAPTION HERE.</figcaption>
+          <img src="./images/vis_pro_true.png" alt="A Visualization that shows China's constant advantage over USA in high-tech exports" />
+          <figcaption>A clear upward trend in China's high-tech exports, contrasting with the USA's relatively stagnant performance.</figcaption>
         </figure>
 
         <p>Design Decisions and Rationale:</p>
 
         <ul>
-          <li>RATIONALE_1</li>
-          <li>RATIONALE_2</li>
-          <li>RATIONALE_3</li>
+          <li>Use relevant <b class="colored">colors</b> to make this visualization perceptual in lieu of cognitive.</li>
+          <li>Comment on the text to <b>highlight</b> aspects that contributes to the proposition</li>
+          <li>Truncate the axis to emphasize difference</li>
         </ul>
       </section>
 
@@ -175,23 +218,95 @@
         <h3>AGAINST the Proposition</h3>
 
         <figure>
-          <img src="IMAGE_FILENAME" alt="" />
-          <figcaption>BRIEF CAPTION HERE.</figcaption>
+          <img src="./images/vis_pro_false.png" alt="A Visualization that attempts to show that USA has larger high-tech exports" />
+          <figcaption>High-tech export share trends for the USA and China, visualized over time, reveal a persistent gap.</figcaption>
         </figure>
 
         <p>Design Decisions and Rationale:</p>
 
         <ul>
-          <li>RATIONALE_1</li>
-          <li>RATIONALE_2</li>
-          <li>RATIONALE_3</li>
+          <li> <b class="backwards">Reversed</b> the axis of China to mislead the reader about the gap.</li>
+          <li>Footnoted the change in color similar to the background as well as a high transparency value to avoid being noticed.</li>
+          <li>Use relevant <b class="colored">colors</b> to make this visualization perceptual in lieu of cognitive.</li>
+          <li>Comment on the text to <b>highlight</b> aspects that contributes to the proposition</li>
+          <li>Mark the data of China with more transparency, creating perceptual contrast.</li>
         </ul>
       </section>
 
       <section>
-        <h2>Final Reflection</h2>
+        <h2>Final Reflection: Understanding and Mitigating Deceptive Visualizations</h2>
 
-        <p>[WRITE FINAL REFLECTION PARAGRAPHS HERE.]</p>
+        <p>In an age where data-driven narratives increasingly influence public perception and policy decisions, visualizations have emerged as powerful rhetorical tools. While charts and graphs often convey an appearance of neutrality and objectivity, they are not immune to manipulation. Through a series of visualization exercises, it becomes clear that even factual, statistically correct data can be selectively transformed to support opposing narratives, often without the audience realizing the extent of the distortion. This reflection addresses the mechanisms behind such deceptive techniques, their motivations and implications, and the differentiated responsibilities various stakeholders should assume in response.</p>
+
+        <h3>The Mechanics of Visual Deception</h3>
+        <p>Deceptive visualizations exploit well-documented perceptual and cognitive biases. These techniques can be categorized broadly into four types:</p>
+        <ul>
+          <li><strong>Scale and Framing Manipulation:</strong> Visual designers may truncate or skew axes, alter denominators, or invert metrics. Since viewers primarily interpret slope, height, and area rather than numerical labels, such adjustments dramatically reshape perception without altering the data itself.</li>
+          <li><strong>Selective Contextualization:</strong> By strategically choosing time windows, comparison groups, or omitting categories, a visualization can subtly imply a conclusion that would be less compelling in a more complete context.</li>
+          <li><strong>Encoding Distortions:</strong> Visual elements like color saturation, overlapping dual-axis scales, and distorted aspect ratios can skew attention toward or away from certain data elements, further biasing interpretation.</li>
+          <li><strong>Biased Annotation and Titling:</strong> Headlines and chart titles play a central role in shaping reader expectations. An assertive title (e.g., "Exports Are Soaring!") combined with selective annotation may lead the viewer to internalize a misleading takeaway without scrutinizing the underlying data.</li>
+        </ul>
+
+        <h3>Causes and Motivations Behind Deceptive Visualization</h3>
+        <ul>
+          <li><strong>Competition for Attention:</strong> In journalism, marketing, and policymaking, engaging visual stories outperform balanced but mundane ones.</li>
+          <li><strong>Incentive Misalignment:</strong> Within organizations, employees may be rewarded for persuasive communication rather than accuracy.</li>
+          <li><strong>Skill and Time Constraints:</strong> Analysts under time pressure may inadvertently produce misleading graphics.</li>
+          <li><strong>Cognitive Biases:</strong> Even well-intentioned creators may subconsciously skew visualizations to confirm their expectations or beliefs.</li>
+        </ul>
+
+        <h3>Consequences of Visual Deception</h3>
+        <ul>
+          <li><strong>Policy Misalignment:</strong> Misleading visuals can distort public understanding and lead to poor decisions.</li>
+          <li><strong>Market Volatility:</strong> In the financial realm, misleading performance visuals can provoke overreactions from investors.</li>
+          <li><strong>Erosion of Public Trust:</strong> Discovering visual deception undermines confidence in all data communication.</li>
+          <li><strong>Increased Polarization:</strong> Deceptive visuals amplify confirmation bias and ideological divisions.</li>
+        </ul>
+
+      <h3>Differentiated Responsibilities and Appropriate Responses</h3>
+      <table>
+        <thead>
+          <tr><th>Stakeholder</th><th>Recommended Actions</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>General Public</td>
+            <td>Check axes, labels, and omitted data; stay skeptical of superlative headlines.</td>
+          </tr>
+          <tr>
+            <td>Journalists and Communicators</td>
+            <td>Disclose transformations, publish interactive versions, and undergo peer review.</td>
+          </tr>
+          <tr>
+            <td>Analysts and Designers</td>
+            <td>Host ethics sessions, apply internal scrutiny, and reject misleading defaults.</td>
+          </tr>
+          <tr>
+            <td>Educators</td>
+            <td>Teach visual skepticism and include deceptive chart analysis in curricula.</td>
+          </tr>
+          <tr>
+            <td>Platform Moderators</td>
+            <td>Flag dual-axis or truncated charts, add counter-visualizations, and enforce sourcing.</td>
+          </tr>
+          <tr>
+            <td>Policy Makers</td>
+            <td>Set transparency standards and require machine-readable data supplements.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>A Path Toward Visual Integrity</h3>
+      <ul>
+        <li><strong>Normalize Transparency:</strong> Just like open methods in academia, charts should be accompanied by raw data and code.</li>
+        <li><strong>Reward Nuance:</strong> Recognize visualizations that show uncertainty and complexity.</li>
+        <li><strong>Embed Ethical Friction:</strong> Visualization tools should nudge users with best-practice prompts.</li>
+        <li><strong>Practice Dual-Perspective Design:</strong> Creating both persuasive and skeptical versions of a chart trains critical thinking.</li>
+      </ul>
+
+      <h3>Conclusion</h3>
+      <p>Visualizations do not speak for themselves—designers and analysts speak for them. This makes the ethical stakes of data storytelling significant. In a world increasingly shaped by charts and infographics, the ability to detect, critique, and correct deceptive visualizations is not merely a technical skill, but a civic responsibility. However, compared to blaming innocent readers by the weakness in front of manipulators, it is of greater responsibilities and effects that by fostering transparency, rewarding integrity, and encouraging vigilance across all levels of society, we can reduce the manipulative power of deceptive graphics and move toward a healthier data discourse.</p>
+
       </section>
     </main>
   </body>
